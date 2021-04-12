@@ -1,10 +1,10 @@
 
 import React, { createRef, } from 'react';
 import { Box, Input, Stack } from '@chakra-ui/react';
-import Layout from '../components/Layout';
+import Layout from 'components/Layout';
 
 
-import DynamicText from "../components/DynamicText";
+import DynamicText from "components/DynamicText";
 
 
 const Home = () => {

@@ -76,6 +76,7 @@ const Header: React.FC<HeaderProps> = () => {
               colorScheme={'teal'}
               size={'sm'}
               mr={4}
+              onClick={()=>{ window.open('https://github.com/honghaijs6/noah-test') }}
             >
               Gihub
             </Button>
@@ -92,12 +93,7 @@ const Header: React.FC<HeaderProps> = () => {
                   }
                 />
               </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
+              
             </Menu>
           </Flex>
 
