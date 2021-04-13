@@ -22,27 +22,27 @@ const SignInForm = React.forwardRef<HTMLInputElement>((props, refController)=>{
                 align={'start'}
                 justify={'space-between'} 
             >
-                <Heading fontSize={'2xl'}>Sign In</Heading>
-                <Link onClick={()=>{ refController.switch('signup') }} color={'blue.500'}>Create Account</Link>
+                <Heading fontSize={'2xl'}>Creat Account</Heading>
+                <Link onClick={()=>{ refController.switch('signin') }} color={'blue.500'}>Sign In</Link>
             </Stack>
 
 
             <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" ref={ refController.refEmail} type="email" />
+                <Input type="email" ref={ refController.refEmailSignUp} type="email" />
             </FormControl>
             <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" ref={ refController.refPassword} type="password" /> 
+                <Input type="password" ref={ refController.refPasswordSignUp} type="password" /> 
             </FormControl>
             <Stack pt={30}>
 
-                <Button onClick={ refController.submit } colorScheme={'blue'} variant={'solid'}>
-                Sign In
+                <Button onClick={ refController.submitSignUp } colorScheme={'blue'} variant={'solid'}>
+                Create Account
                 </Button>
             </Stack>
             <Box color={'red.500'} 
-                ref={ refController.refMsg }
+                ref={ refController.refMsgSignUp }
             ></Box>
         </Stack>
     )

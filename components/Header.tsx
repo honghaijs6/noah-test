@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ReactNode } from 'react';
+
+import { AuthContext } from '../context/AuthContext';
+import { auth } from '../config/firebaseSetup';
+
 
 import {
   Box,
@@ -19,7 +23,9 @@ import {
 
 interface HeaderProps { }
 
-const Links = ['Test 1 ', 'Test 2', 'Test 3'];
+
+
+const Links = ['Home','Blog'];
 const NavLink = ({ children }: { children: ReactNode }) => {
 
   return (
@@ -39,6 +45,15 @@ const NavLink = ({ children }: { children: ReactNode }) => {
 
 
 const Header: React.FC<HeaderProps> = () => {
+
+  const user = useContext(AuthContext);
+
+  const signOut = async () => {
+    await auth.signOut();
+  };
+
+
+
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} borderBottom={1}
       borderStyle={'solid'}
@@ -65,6 +80,18 @@ const Header: React.FC<HeaderProps> = () => {
 
           {/** RIGHT SIDE  */}
           <Flex alignItems={'center'}>
+            { user ? (
+               <Button
+               variant={'solid'}
+               colorScheme={'blackAlpha'}
+               size={'sm'}
+               mr={4}
+               onClick={ signOut }
+             >
+               Sign Out
+             </Button>
+            ):null }
+         
             <Button
               variant={'solid'}
               colorScheme={'teal'}
@@ -74,6 +101,9 @@ const Header: React.FC<HeaderProps> = () => {
             >
               Gihub
             </Button>
+
+            
+            
             <Menu>
               <MenuButton
                 as={Button}
