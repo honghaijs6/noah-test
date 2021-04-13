@@ -7,16 +7,10 @@ import {
   Avatar,
   HStack,
   Link,
-  IconButton,
   Button,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
   useColorModeValue,
-  Stack,
   Container,
   Text
 } from "@chakra-ui/react";

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { Stack, Text, Box } from '@chakra-ui/react';
 
-
-
 const DynamicText = React.forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <Box pt={10}>

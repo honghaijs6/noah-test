@@ -1,13 +1,18 @@
 
-import React, { createRef, } from 'react';
+import React, { createRef, useState } from 'react';
 import { Box, Input, Stack } from '@chakra-ui/react';
+
+import { AuthContext } from '../context/AuthContext';
 import Layout from 'components/Layout';
 
+import SignInForm from 'components/SignInForm';
 
 import DynamicText from "components/DynamicText";
 
 
 const Home = () => {
+
+  const [tab, setTab] = useState('signin');
 
   const refDisplayText = createRef<HTMLDivElement>();
 
@@ -19,7 +24,10 @@ const Home = () => {
   return (
     <Layout title="Coding Test">
 
-        <Stack 
+        { tab === 'signin' ?  <SignInForm title="Sign In"  /> : null }
+
+        
+        {/*<Stack 
           maxW={500}
           alignSelf="center"
           alignContent="center"
@@ -30,7 +38,7 @@ const Home = () => {
           <DynamicText ref={refDisplayText} />
           <Input size="md" onChange={onChange} />
           
-        </Stack>
+        </Stack>*/}
       
     </Layout>
   );
